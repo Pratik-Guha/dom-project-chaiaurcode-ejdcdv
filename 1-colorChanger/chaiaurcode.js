@@ -12,9 +12,11 @@ buttons.forEach((button) => {
     }
     if (e.target.id === 'blue') {
       body.style.backgroundColor = e.target.id;
+      body.style.color = '#fff';
     }
     if (e.target.id === 'yellow') {
       body.style.backgroundColor = e.target.id;
+      body.style.color = '#212121';
     }
     if (e.target.id === 'white') {
       body.style.backgroundColor = e.target.id;
