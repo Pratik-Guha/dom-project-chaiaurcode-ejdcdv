@@ -14,15 +14,29 @@ form.addEventListener('submit', (e) => {
     const BMI = (weight / ((height * height) / 10000)).toFixed(2);
     results.innerHTML = `<span>${BMI}</span>`;
     redline(BMI);
+    yellowline(BMI);
+    greenline(BMI);
   }
 });
 
 const redline = (BMI) => {
   if (BMI > 24.2) {
     document.querySelector('.overweight').style.color = 'red';
-  } else if (BMI >= 18.6 && BMI < 24.2) {
-    document.querySelector('.normal').style.color = 'darkgreen';
   } else {
+    document.querySelector('.overweight').style.color = 'black';
+  }
+};
+const yellowline = (BMI) => {
+  if (BMI < 18.6) {
     document.querySelector('.underweight').style.color = 'yellow';
+  } else {
+    document.querySelector('.underweight').style.color = 'black';
+  }
+};
+const greenline = (BMI) => {
+  if (BMI >= 18.6 && BMI < 24.9) {
+    document.querySelector('.normal').style.color = 'green';
+  } else {
+    document.querySelector('.normal').style.color = 'black';
   }
 };
